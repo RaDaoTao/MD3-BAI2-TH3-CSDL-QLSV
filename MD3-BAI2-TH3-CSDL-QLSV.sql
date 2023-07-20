@@ -10,7 +10,7 @@ CREATE TABLE Class
     StartDate DATETIME    NOT NULL,
     Status    BIT
 );
--- Bước 4: Tạo bảng Student với các thuộc tính StudentId, StudentName, Address, Phone, Status, ClassId với các ràng buộc giống như trong mô tả ở trên:
+-- Bước 4: Tạo bảng Student với các thuộc tính StudentId, StudentName, Address, Phone, Status, ClassId với rằng buộc như sau:
 CREATE TABLE Student
 (
     StudentId   INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,7 +21,7 @@ CREATE TABLE Student
     ClassId     INT         NOT NULL,
     FOREIGN KEY (ClassId) REFERENCES Class (ClassID)
 );
--- Bước 5: Tạo bảng Subject với các thuộc tính SubId, SubName, Credit, Status với các ràng buộc giống như trong mô tả ở trên:
+-- Bước 5: Tạo bảng Subject với các thuộc tính SubId, SubName, Credit, Status với các ràng buộc như sau :
 CREATE TABLE Subject
 (
     SubId   INT AUTO_INCREMENT PRIMARY KEY,
@@ -29,7 +29,7 @@ CREATE TABLE Subject
     Credit  TINYINT     NOT NULL DEFAULT 1 CHECK ( Credit >= 1 ),
     Status  BIT                  DEFAULT 1
 );
--- Bước 6: Tạo bảng Mark với các thuộc tính MarkId, SubId, StudentId, Mark, ExamTimes với các ràng buộc 
+-- Bước 6: Tạo bảng Mark với các thuộc tính MarkId, SubId, StudentId, Mark, ExamTimes với các ràng buộc như sau :
 CREATE TABLE Mark
 (
     MarkId    INT AUTO_INCREMENT PRIMARY KEY,
